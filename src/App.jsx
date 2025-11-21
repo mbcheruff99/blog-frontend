@@ -30,17 +30,14 @@ function PostIndex(props) {
     <div id="posts-index">
       <br/>
       <h1>All posts - {props.postsProp.length} </h1>
-      <div className="posts"/>
-        <h2> Here's a Post of Sorts</h2>
-        <p>By Me</p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flower_jtca001.jpg"/>
-        <br />
-
-      <div className="posts"/>
-        <h2> Here's another Post</h2>
-        <p>By MC</p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Part_of_a_bookshelf_containing_books_by_ancient_philosophers_%281.1%29.jpg"/>
-        <br />
+        {props.postsProp.map((post) => (
+          <div key={post.id} className="posts"> 
+            <h2>{post.title}</h2>
+            <img src={post.image}/>
+            <p>{post.body}</p>
+            <button> Read </button>
+          </div>
+          ))}
     </div>
   )
 }
@@ -48,7 +45,7 @@ function PostIndex(props) {
 function Footer() {
   return (
     <footer>
-      <p>Copyright 2042</p>
+      <p>Copyright 2025</p>
     </footer>
   )
 }
@@ -66,12 +63,6 @@ function PostPage() {
         title: "another post",
         body: "some stuff",
         image: "https://upload.wikimedia.org/wikipedia/commons/7/73/Part_of_a_bookshelf_containing_books_by_ancient_philosophers_%281.1%29.jpg",
-      },
-      {
-        id: 3,
-        title: "___",
-        body: "___",
-        image: "___",
       },
     ];
   return (
@@ -93,6 +84,3 @@ function App() {
 }
 
 export default App;
-
-
-//  asdfgh
