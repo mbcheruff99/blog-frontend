@@ -5,6 +5,7 @@ export function PostsNew(props) {
     const form = event.target;
     const params = new FormData(form);
     props.onCreate(params);
+    form.reset();
   }
 
   return (
