@@ -3,6 +3,7 @@ import { PostsNew } from "./PostsNew";
 import axios from "axios";
 import { useState, useEffect } from 'react'
 import { Modal } from "./Modal"
+import { PostsShow } from "./PostsShow";
 
 export function PostPage() {
 
@@ -29,8 +30,7 @@ export function PostPage() {
       <PostsNew />
       <PostIndex postsProp={posts} onShow={handleShow} />
       <Modal show={isPostsShowVisible} onClose={() => setIsPostsShowVisible(false)}>
-        <h2> Title: {currentPost.title} </h2> 
-        <p> {currentPost.body} </p>
+       <PostsShow post={currentPost}/>
       </Modal>
     </div>
   );
