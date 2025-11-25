@@ -23,11 +23,18 @@ export function PostPage() {
     setCurrentPost(post);
   }
 
+  function handleCreate(params) {
+    console.log("handleCreate");
+    axios.post("http://localhost:3000/posts.json", params).then((response) => {
+      console.log(response.data);
+    });
+  }
+
   useEffect(handleIndex, []);
 
   return (
     <div>
-      <PostsNew />
+      <PostsNew onCreate={handleCreate} />
       <PostIndex postsProp={posts} onShow={handleShow} />
       <Modal show={isPostsShowVisible} onClose={() => setIsPostsShowVisible(false)}>
        <PostsShow post={currentPost}/>
