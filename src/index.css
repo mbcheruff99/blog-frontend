@@ -2,6 +2,10 @@
   width: 300px;
 }
 
+#posts-show img {
+  width: 300px;
+}
+
 html {
   scroll-behavior: smooth;
 }

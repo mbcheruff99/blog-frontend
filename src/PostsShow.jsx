@@ -9,6 +9,7 @@ export function PostsShow(props) {
   return (
     <div id="posts-show">
        <h2> {props.post.title} </h2> 
+       <img src={props.post.image}/>
         <p> {props.post.body} </p>
         <hr/>
         <h2> Edit Post</h2>
@@ -24,6 +25,7 @@ export function PostsShow(props) {
           </div>
           <button type="submit"> Update Post </button>
         </form>
+        <button onClick={() => props.onDestroy(props.post)} > Delete Post</button>
     </div>
   )
 }

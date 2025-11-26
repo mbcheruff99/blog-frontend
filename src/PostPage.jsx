@@ -7,6 +7,7 @@ import { PostsShow } from "./PostsShow";
 
 export function PostPage() {
 
+  useEffect(handleIndex, []);
   const [posts, setPosts] = useState([]);
   const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
   const [currentPost, setCurrentPost] = useState({});
@@ -22,7 +23,7 @@ export function PostPage() {
     setIsPostsShowVisible(true);
     setCurrentPost(post);
   }
-
+  
   function handleCreate(params) {
     console.log("handleCreate");
     axios.post("http://localhost:3000/posts.json", params).then((response) => {
@@ -39,14 +40,22 @@ export function PostPage() {
     });
   };
 
-  useEffect(handleIndex, []);
+  function handleDestroy(post) {
+    console.log("handleDestroy", post);
+    axios.delete(`http://localhost:3000/posts/${post.id}.json`).then((response) => {
+      console.log(response.data);
+      setPosts(posts.filter(p => p.id !== post.id));
+      setIsPostsShowVisible(false);
+    })
+  }
+
 
   return (
     <div>
       <PostsNew onCreate={handleCreate} />
       <PostIndex postsProp={posts} onShow={handleShow} />
       <Modal show={isPostsShowVisible} onClose={() => setIsPostsShowVisible(false)}>
-       <PostsShow post={currentPost} onUpdate={handleUpdate} />
+       <PostsShow post={currentPost} onUpdate={handleUpdate} onDestroy={handleDestroy} />
       </Modal>
     </div>
   );
