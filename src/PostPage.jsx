@@ -19,13 +19,11 @@ export function PostPage() {
     })}
 
   function handleShow(post) {
-    console.log("handleShow", post);
     setIsPostsShowVisible(true);
     setCurrentPost(post);
   }
   
   function handleCreate(params) {
-    console.log("handleCreate");
     axios.post("http://localhost:3000/posts.json", params).then((response) => {
       console.log(response.data);
       setPosts([...posts, response.data]);
@@ -33,7 +31,6 @@ export function PostPage() {
   }
 
    const handleUpdate = (post, params) => {
-    console.log("handleUpdate");
     axios.patch(`http://localhost:3000/posts/${post.id}.json`, params).then((response) => {
       setPosts(posts.map(p => p.id === response.data.id ? response.data : p));
       setIsPostsShowVisible(false);
@@ -41,7 +38,6 @@ export function PostPage() {
   };
 
   function handleDestroy(post) {
-    console.log("handleDestroy", post);
     axios.delete(`http://localhost:3000/posts/${post.id}.json`).then((response) => {
       console.log(response.data);
       setPosts(posts.filter(p => p.id !== post.id));
