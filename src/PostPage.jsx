@@ -5,6 +5,9 @@ import { useState, useEffect } from 'react'
 import { Modal } from "./Modal"
 import { PostsShow } from "./PostsShow";
 
+axios.defaults.baseURL = "http://localhost:3000";
+axios.defaults.withCredentials = true;
+
 export function PostPage() {
 
   useEffect(handleIndex, []);
@@ -13,7 +16,7 @@ export function PostPage() {
   const [currentPost, setCurrentPost] = useState({});
 
   function handleIndex() {
-    axios.get("http://localhost:3000/posts.json").then((response) => {
+    axios.get("/posts.json").then((response) => {
       console.log(response.data);
       setPosts(response.data);
     })}
@@ -24,21 +27,21 @@ export function PostPage() {
   }
   
   function handleCreate(params) {
-    axios.post("http://localhost:3000/posts.json", params).then((response) => {
+    axios.post("/posts.json", params).then((response) => {
       console.log(response.data);
       setPosts([...posts, response.data]);
     });
   }
 
    const handleUpdate = (post, params) => {
-    axios.patch(`http://localhost:3000/posts/${post.id}.json`, params).then((response) => {
+    axios.patch(`/posts/${post.id}.json`, params).then((response) => {
       setPosts(posts.map(p => p.id === response.data.id ? response.data : p));
       setIsPostsShowVisible(false);
     });
   };
 
   function handleDestroy(post) {
-    axios.delete(`http://localhost:3000/posts/${post.id}.json`).then((response) => {
+    axios.delete(`/posts/${post.id}.json`).then((response) => {
       console.log(response.data);
       setPosts(posts.filter(p => p.id !== post.id));
       setIsPostsShowVisible(false);
