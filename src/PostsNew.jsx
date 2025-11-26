@@ -1,10 +1,10 @@
-export function PostsNew(props) {
+export function PostsNew({onCreate}) {
 
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
     const params = new FormData(form);
-    props.onCreate(params);
+    onCreate(params);
     form.reset();
   }
 
