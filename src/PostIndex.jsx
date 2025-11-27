@@ -8,7 +8,7 @@ export function PostIndex({postsProp, onShow} ) {
           <div key={post.id} className="col"> 
             <div className="card h-100"> 
               <div className="ratio ratio-16x9"> 
-                <img src={post.image} className="object-fit-cover img-fluid" alt="..."/>
+                <img src={post.image} className="w-100 h-100 object-fit-cover" alt="post image"/>
               </div>
               <div className="card-body"> 
                 <h5 className="card-title"> {post.title} </h5>
