@@ -50,7 +50,7 @@ export function PostPage() {
 
 
   return (
-    <div>
+    <div className="container">
       <PostsNew onCreate={handleCreate} />
       <PostIndex postsProp={posts} onShow={handleShow} />
       <Modal show={isPostsShowVisible} onClose={() => setIsPostsShowVisible(false)}>
