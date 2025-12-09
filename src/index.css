@@ -9,3 +9,18 @@
 html {
   scroll-behavior: smooth;
 }
+
+h1 {
+  font-family: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
+font-weight: normal;
+}
+
+h2 {
+  font-family: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
+font-weight: 200;
+}
+
+p {
+  font-family: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
+font-weight: 100;
+}

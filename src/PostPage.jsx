@@ -48,7 +48,6 @@ export function PostPage() {
     })
   }
 
-
   return (
     <div className="container">
       <PostsNew onCreate={handleCreate} />
@@ -57,5 +56,5 @@ export function PostPage() {
        <PostsShow post={currentPost} onUpdate={handleUpdate} onDestroy={handleDestroy} />
       </Modal>
     </div>
-  );
+  ); 
 }

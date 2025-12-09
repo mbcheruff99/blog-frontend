@@ -3,7 +3,7 @@ export function PostIndex({postsProp, onShow} ) {
     <div id="posts-index">
       <br />
       <h1>All posts {postsProp.length} </h1>
-      <div className="row row-cols-2 row-cols-md-4 g-4">
+      <div className="row row-cols-3 row-cols-md-3 g-4">
         {postsProp.map((post) => (
           <div key={post.id} className="col"> 
             <div className="card h-100"> 
@@ -21,4 +21,4 @@ export function PostIndex({postsProp, onShow} ) {
       </div>
     </div>
   );
-}
+} 

@@ -25,7 +25,7 @@ export function PostsShow({post, onUpdate, onDestroy}) {
           </div>
           <button type="submit"> Update Post </button>
         </form>
-        <button onClick={() => onDestroy(post)} > Delete Post</button>
+        <button onClick={() => onDestroy(post)} > Delete Post </button>
     </div>
   )
 }
