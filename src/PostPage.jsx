@@ -5,8 +5,7 @@ import { useState, useEffect } from 'react'
 import { Modal } from "./Modal"
 import { PostsShow } from "./PostsShow";
 
-axios.defaults.baseURL = "http://localhost:3000";
-axios.defaults.withCredentials = true;
+
 
 export function PostPage() {
 
