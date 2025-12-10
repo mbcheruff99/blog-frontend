@@ -12,7 +12,7 @@ export function Header() {
     <header>
       <nav className="navbar bg-primary navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#"
+          <a className="navbar-brand" href="/" //Blog page gpes to home (line 26, line )
           style={{fontFamily: "Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif", fontWeight: "bold" }}>Blog Page</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -23,10 +23,10 @@ export function Header() {
                 <a className="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#posts-all">All Posts</a>
+                <Link className="nav-link" to="/posts">All Posts</Link> 
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#posts-new">New Post</a>
+                <Link className="nav-link" to="/posts/new">New Post</Link>
               </li>
             </ul>
           </div>

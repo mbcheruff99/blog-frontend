@@ -2,7 +2,7 @@ import axios from "axios";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Footer } from "./Footer";
 import { Header } from "./Header"
-import { PostPage } from "./PostPage";
+// import { PostPage } from "./PostPage";
 import { SignupPage } from "./SignupPage";  
 import { LoginPage } from "./LoginPage";
 import { HomePage } from "./HomePage";

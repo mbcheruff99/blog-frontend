@@ -1,9 +1,14 @@
+body {
+  margin-left: 40px !important;
+  margin-right: 40px !important;
+}
+
 #posts-index img {
   width: 300px;
 }
 
 #posts-show img {
-  width: 300px;
+  width: 300px; 
 }
 
 html {

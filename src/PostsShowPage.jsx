@@ -12,23 +12,25 @@ export function PostsShowPage() {
     axios.get(`/posts/${id}.json`).then((response) => {
       setPost(response.data);
     });
-  });
+  }, [id]);
 
-  function handleUpdate(params) {
+  function handleUpdate(post, params) {
+    console.log(params)
     axios.patch(`/posts/${id}.json`, params).then((response) => {
       setPost(response.data);
+      console.log(response.data)
       navigate("/posts");
     });
   }
 
   function handleDestroy() {
-    axios.delete(`/posts${id}.json`).then(() => {
+    axios.delete(`/posts/${id}.json`).then(() => {
       navigate("/posts");
     })
   }
 
   return (
-    <div>
+    <div className="actualSite">
       <PostsShow post={post} onUpdate={handleUpdate} onDestroy={handleDestroy} />
     </div>
   );
