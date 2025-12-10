@@ -6,6 +6,10 @@ import { PostPage } from "./PostPage";
 import { SignupPage } from "./SignupPage";  
 import { LoginPage } from "./LoginPage";
 import { HomePage } from "./HomePage";
+import { PostIndexPage } from "./PostIndexPage";
+import { PostsNewPage } from "./PostsNewPage";
+import { PostsShowPage } from "./PostsShowPage";
+
 
 axios.defaults.baseURL = "http://localhost:3000";
 axios.defaults.withCredentials = true;
@@ -22,7 +26,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <PostPage />//<HomePage />
+        element: <HomePage />
+      },
+      {
+        path: "/posts",
+        element: <PostIndexPage />
+      },
+      {
+        path: "/posts/new",
+        element: <PostsNewPage />
+      },
+      {
+        path: "/posts/:id",
+        element: <PostsShowPage />
       },
       {
         path: "/signup",
