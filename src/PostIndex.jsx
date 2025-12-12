@@ -12,6 +12,15 @@ export function PostIndex({postsProp, onShow} ) {
               </div>
               <div className="card-body"> 
                 <h5 className="card-title"> {post.title} </h5>
+                <div className="tags"> 
+                  {post.tags && 
+                  post.tags.map((tag) => (
+                    <span key={tag.id} className="badge bg-secondary me-1">
+                      {tag.name}
+                    </span>
+                  ))}
+                </div>
+                <br />
                 <p className="card-text"> {post.body}</p>
                 <button className="btn btn-primary" onClick={() => onShow(post)}> More Info </button>
               </div>
