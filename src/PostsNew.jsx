@@ -10,7 +10,7 @@ export function PostsNew({onCreate}) {
 
   return (
     <div id="posts-new">
-      <h1>New post</h1>
+      <h1>New Post</h1>
       <form onSubmit={handleSubmit}>
         <div>
           Title: <input className="form-control" name="title" type="text" />

@@ -13,7 +13,6 @@ export function PostsNewPage() {
   }
   return (
     <div className="actualSite">
-      <h1> New Post </h1>
       <PostsNew onCreate={handleCreate} />
     </div>
   );
