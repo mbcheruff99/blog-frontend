@@ -13,7 +13,7 @@ export function PostsShowPage() {
       setPost(response.data);
     });
   }, [id]);
-
+ 
   function handleUpdate(post, params) {
     console.log(params)
     axios.patch(`/posts/${id}.json`, params).then((response) => {
@@ -22,7 +22,7 @@ export function PostsShowPage() {
       navigate("/posts");
     });
   }
-
+  
   function handleDestroy() {
     axios.delete(`/posts/${id}.json`).then(() => {
       navigate("/posts");

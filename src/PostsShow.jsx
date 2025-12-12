@@ -9,9 +9,22 @@ export function PostsShow({post, onUpdate, onDestroy}) {
   return (
     <div id="posts-show">
        <h2> {post.title} </h2> 
-       <img src={post.image}/>
+        <div className="mb-3">
+          <strong>Tags: </strong>
+          {post.tags && post.tags.length > 0 ? (
+            post.tags.map((tag) => (
+              <span key={tag.id} className="badge bg-info me-1">
+                {tag.name}
+              </span>
+            ))
+          ) : (
+            <span className="text-muted">No tags</span>
+          )}
+        </div>
+        <img src={post.image}/>
         <p> {post.body} </p>
         <hr/>
+{/* edit section */}
         <h2> Edit Post</h2>
         <form onSubmit={handleSubmit}>
           <div>
@@ -25,6 +38,7 @@ export function PostsShow({post, onUpdate, onDestroy}) {
           </div>
           <button type="submit"> Update Post </button>
         </form>
+{/* delete button */}
         <button onClick={() => onDestroy(post)} > Delete Post </button>
     </div>
   )
