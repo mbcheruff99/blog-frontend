@@ -14,6 +14,10 @@ import { PostsShowPage } from "./PostsShowPage";
 axios.defaults.baseURL = "http://localhost:3000";
 axios.defaults.withCredentials = true;
 
+axios.defaults.baseURL = process.env.NODE_ENV === "development" 
+  ? "http://localhost:3000" 
+  : "https://my-blog-backend-np7n.onrender.com"; 
+
 const router = createBrowserRouter([
   {
     element: (
